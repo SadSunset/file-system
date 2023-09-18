@@ -5,10 +5,10 @@ import { Input } from './Input';
 
 type ModalProps = {
     children: JSX.Element | JSX.Element[];
-    modalToggle: () => void
+    modalToggler: () => void
 }
 
-export const ModalWindow: FunctionComponent<ModalProps> = ({children, modalToggle}) => {
+export const ModalWindow: FunctionComponent<ModalProps> = ({children, modalToggler}) => {
 
     return (
         <div>
@@ -21,7 +21,7 @@ export const ModalWindow: FunctionComponent<ModalProps> = ({children, modalToggl
                 {children}
                 <Button
                     btnText='Добавить'
-                    onClick={modalToggle}
+                    onClick={modalToggler}
                 />
             </div>
         </div>
