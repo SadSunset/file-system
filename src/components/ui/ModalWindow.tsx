@@ -14,11 +14,11 @@ type ModalProps = {
 export const ModalWindow: FunctionComponent<ModalProps> = observer(({children, modalToggler}) => {
 
     return (
-        <div>
-            <div className={styles.modal}>
+        <div className={styles.blackout}>
+            <div className={`${styles.flexColumn} ${styles.controls}`}>
                 <div>
                     <Input
-                        placeholder='Введите имя папки или файла'
+                        placeholder='Enter sequence name'
                         value={files.fileTitle}
                         onChange={(e: any) => files.titleHandler(e.target.value)}
                     />

@@ -1,0 +1,51 @@
+.directoryItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    vertical-align: middle;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.directoryItem:hover {
+    background: #343434;
+}
+
+.icons {
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    display: flex;
+}
+
+.folder, .file {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+
+.subDirectory{
+    display: block;
+    margin-left: 1.5rem;
+}
+
+.subFile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    vertical-align: middle;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subFile:hover{
+    background: #343434;
+}
+
+.hide {
+    display: none;
+}
+
+

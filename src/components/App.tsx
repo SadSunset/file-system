@@ -1,10 +1,8 @@
 import {FunctionComponent, useState} from 'react'
 import { Button } from './ui/Button';
 import { ModalWindow } from './ui/ModalWindow';
-
 import styles from '../style/app.module.scss';
 import { DirectoryList } from './DirectoryList';
-import { DirectoryItem } from './DirectoryItem';
 import { Header } from './ui/Header';
 import files from '../store/fileSystem';
 
@@ -20,7 +18,7 @@ const App:FunctionComponent = () => {
                 isModalShown &&
                 <ModalWindow modalToggler={modalWindowToggle}>
                     <Button
-                        btnText='Add folder'
+                        btnText='Add'
                         onClick={() => files.addFile()}
                     />
                 </ModalWindow>
