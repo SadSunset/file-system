@@ -1,6 +1,6 @@
+import { FunctionComponent, ComponentPropsWithoutRef } from 'react';
 
-
-export const Input = ({...props}) => {
+export const Input: FunctionComponent<ComponentPropsWithoutRef<'input'>> = ({...props}) => {
 
     return (
         <input 
