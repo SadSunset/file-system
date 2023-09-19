@@ -4,6 +4,7 @@ import { FileSystemType } from '../types/types';
 import files from '../store/fileSystem';
 import {ModalWindow} from './ui/ModalWindow';
 import {Button } from './ui/Button';
+import { FileItem } from './FileItem';
 
 type DirectoryProps = {
     directory: FileSystemType;
@@ -35,13 +36,20 @@ export const DirectoryItem: FunctionComponent<DirectoryProps> = observer(( {dire
             }
             <div style={{border: '2px solid black', marginTop: '10px'}}>
                 <span onClick={subItemsToggler}>{isSubItemsShown ? 'раскрыть' : 'закрыть'}</span>
-                <p style={{ border: '1px solid red', margin: '3px'}}>Folder</p>
+                <p style={{ border: '1px solid red', margin: '3px'}}>{title}</p>
                 <p onClick={modalWindowToggler} style={{ border: '1px solid green', margin: '3px' }}>Добавить папку</p>
                 <p onClick={() => files.removeFile(id)}>Удалить папку</p>
             </div>
             {
                 subFiles.length > 0 &&
-                    subFiles.map(subFile => <DirectoryItem key={subFile.id} directory={subFile}/>)
+                    subFiles.map(subFile => !subFile.title.includes('.') ?
+                            <DirectoryItem
+                                key={subFile.id}
+                                directory={subFile}
+                            /> :
+                            <FileItem key={subFile.id}
+                                directory={subFile} />
+                    )
             }
         </>
     )

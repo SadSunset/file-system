@@ -14,7 +14,7 @@ const App:FunctionComponent = () => {
     const modalWindowToggle = () => setIsModalShown(prev => !prev)
 
     return (
-        <div>
+        <div className={styles.folders_list}>
             <Header modalToggler={modalWindowToggle}/>
             {
                 isModalShown &&

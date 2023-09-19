@@ -3,6 +3,7 @@ import { Button } from './Button'
 import { Input } from './Input'
 import { observer } from 'mobx-react-lite';
 import files from '../../store/fileSystem'
+import styles from './modal.module.scss'
 
 
 type ModalProps = {
@@ -14,7 +15,7 @@ export const ModalWindow: FunctionComponent<ModalProps> = observer(({children, m
 
     return (
         <div>
-            <div>
+            <div className={styles.modal}>
                 <div>
                     <Input
                         placeholder='Введите имя папки или файла'

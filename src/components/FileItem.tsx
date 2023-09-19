@@ -1,10 +1,7 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent } from 'react';
 import { observer } from 'mobx-react-lite';
 import { FileSystemType } from '../types/types';
 import files from '../store/fileSystem';
-import { ModalWindow } from './ui/ModalWindow';
-import { Button } from './ui/Button';
-import { Dir } from 'fs';
 
 type DirectoryProps = {
     directory: FileSystemType;
@@ -16,7 +13,8 @@ export const FileItem: FunctionComponent<DirectoryProps> = observer(({ directory
     return (
         <>
             <div style={{ border: '2px solid black', marginTop: '10px' }}>
-                <p style={{ border: '1px solid red', margin: '3px' }}>File</p>
+                <p style={{ border: '1px solid red', margin: '3px' }}>{title}</p>
+                <p onClick={() => files.removeFile(id)}>Удалить</p>
             </div>
             {
                 subFiles.length > 0 &&
